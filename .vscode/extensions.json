@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "streetsidesoftware.code-spell-checker",
+    "tobermory.es6-string-html",
+    "aaron-bond.better-comments",
+    "usernamehw.errorlens",
+    "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
+    "dbaeumer.vscode-eslint"
+  ]
+}
