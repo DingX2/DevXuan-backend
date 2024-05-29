@@ -3,6 +3,7 @@
         "bunx",
         "commitlint",
         "devxuan",
+        "necolas",
         "Parens"
     ]
 }
