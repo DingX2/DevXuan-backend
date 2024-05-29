@@ -1,0 +1,7 @@
+node_modules
+.vscode
+bun.lockb
+.eslintrc
+.github
+.gitignore
+README.md
