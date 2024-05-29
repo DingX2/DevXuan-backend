@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "dependsOn": ["프로젝트 실행", "타입체크"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "프로젝트 실행",
+            "type": "npm",
+            "group": "build",
+            "script": "dev",
+            "detail": "Run the project using bun run dev"
+        },
+        {
+            "label": "타입체크",
+            "type": "npm",
+            "script": "type-check:watch",
+            "group": "build",
+            "detail": "Run TypeScript type checking in watch mode"
+        }
+    ]
+  }
+  
