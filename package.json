@@ -5,10 +5,13 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "preview": "vite preview",
         "start": "next start",
         "prepare": "husky",
         "lint": "next lint",
-        "prettier": "prettier ."
+        "prettier": "prettier .",
+        "type-check": "tsc --noEmit",
+        "type-check:watch": "tsc --noEmit --watch"
     },
     "dependencies": {
         "react": "^18",
