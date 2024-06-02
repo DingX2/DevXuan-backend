@@ -31,7 +31,9 @@ export default function Home() {
             {posts.map((post: PostModel) => (
                 <div key={post.id}>
                     <h1>{post.title}</h1>
+                    <h2>{post.subtitle}</h2>
                     <p>{post.content}</p>
+                    <p>{post.image}</p>
                     <button type="button" onClick={() => handlerDelete(post.id)}>
                         삭제
                     </button>

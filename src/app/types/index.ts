@@ -6,7 +6,10 @@ export interface UserModel {
 export interface PostModel {
     id: number;
     title: string;
+    subtitle: string;
+    writeDate: string;
     content: string;
+    image?: string;
 }
 
 export interface PostAddModel {
