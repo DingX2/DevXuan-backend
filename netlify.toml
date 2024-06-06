@@ -3,6 +3,7 @@
   command = "bun run build"
 
 [context.production.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
   NODE_ENV = "production"
 
 [context.deploy-preview]
