@@ -3,7 +3,7 @@ import Cors from 'cors';
 
 const cors = Cors({
     methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://devxuan.netlify.app'],
 });
 
 function runMiddleware(
