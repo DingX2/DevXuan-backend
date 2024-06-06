@@ -1,9 +1,9 @@
 [build]
   publish = "public"
-  command = "npm run build"
+  command = "bun run build"
 
 [context.production.environment]
   NODE_ENV = "production"
 
 [context.deploy-preview]
-  command = "npm run build-preview"
+  command = "bun run build-preview"
