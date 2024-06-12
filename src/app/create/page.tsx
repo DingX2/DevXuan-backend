@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
-export default function CreatePost() {
+export const CreatePost = () => {
     const [title, setTitle] = useState('');
     const [subtitle, setSubtitle] = useState('');
     const [content, setContent] = useState('');
@@ -50,4 +50,4 @@ export default function CreatePost() {
             </form>
         </div>
     );
-}
+};

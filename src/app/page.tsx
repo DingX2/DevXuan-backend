@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import axios from 'axios';
-import { type PostModel } from './types';
+import { type PostModel } from '../types';
 
-export default function Home() {
+export const Home = () => {
     const [posts, setPosts] = useState<PostModel[]>([]);
     const router = useRouter();
 
@@ -58,4 +58,4 @@ export default function Home() {
             </div>
         </div>
     );
-}
+};
