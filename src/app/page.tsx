@@ -1,86 +1,61 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+'use client';
 
-export default function Home() {
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import axios from 'axios';
+import { type PostModel } from '../types';
+
+export const Home = () => {
+    const [posts, setPosts] = useState<PostModel[]>([]);
+    const router = useRouter();
+
+    useEffect(() => {
+        axios.get('/api/posts').then((res) => {
+            setPosts(res.data);
+        });
+    }, [posts]);
+
+    const handlerDelete = (id: number) => {
+        axios.delete(`/api/posts/${id}`);
+    };
+
+    const handleUpdate = (id: number) => {
+        router.push(`/update/${id}`);
+    };
+
     return (
-        <main className={styles.main}>
-            <div className={styles.description}>
-                <p>
-                    Get started by editing&nbsp;
-                    <code className={styles.code}>src/app/page.tsx</code>
-                </p>
-                <div>
-                    <a
-                        href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        By{' '}
-                        <Image
-                            src="/vercel.svg"
-                            alt="Vercel Logo"
-                            className={styles.vercelLogo}
-                            width={100}
-                            height={24}
-                            priority
-                        />
-                    </a>
+        <div>
+            <h1>게시판 목록</h1>
+            <Link href="/create">새 글 쓰기</Link>
+            {posts.map((post: PostModel) => (
+                <div key={post.id}>
+                    <h1>{post.title}</h1>
+                    <h2>{post.subtitle}</h2>
+                    <p>{post.content}</p>
+                    <p>{post.image}</p>
+                    <button type="button" onClick={() => handlerDelete(post.id)}>
+                        삭제
+                    </button>
+                    <button type="button" onClick={() => handleUpdate(post.id)}>
+                        수정
+                    </button>
                 </div>
+            ))}
+            <Link href="#section1" scroll={false}>
+                섹션 1로 이동
+            </Link>
+            <Link href="#section2">섹션 2로 이동</Link>
+            <div style={{ height: '100vh' }}>테스트용공간</div>
+            <div id="section1">
+                <h2>섹션 1</h2>
+                <p>이곳은 섹션 1입니다.</p>
             </div>
-
-            <div className={styles.center}>
-                <Image className={styles.logo} src="/next.svg" alt="Next.js Logo" width={180} height={37} priority />
+            <div style={{ height: '100vh' }}>테스트용공간22</div>
+            <div id="section2">
+                <h2>섹션 2</h2>
+                <p>이곳은 섹션 2입니다.</p>
             </div>
-
-            <div className={styles.grid}>
-                <a
-                    href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                    className={styles.card}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <h2>
-                        Docs <span>-&gt;</span>
-                    </h2>
-                    <p>Find in-depth information about Next.js features and API.</p>
-                </a>
-
-                <a
-                    href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                    className={styles.card}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <h2>
-                        Learn <span>-&gt;</span>
-                    </h2>
-                    <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-                </a>
-
-                <a
-                    href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                    className={styles.card}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <h2>
-                        Templates <span>-&gt;</span>
-                    </h2>
-                    <p>Explore starter templates for Next.js.</p>
-                </a>
-
-                <a
-                    href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                    className={styles.card}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <h2>
-                        Deploy <span>-&gt;</span>
-                    </h2>
-                    <p>Instantly deploy your Next.js site to a shareable URL with Vercel.</p>
-                </a>
-            </div>
-        </main>
+        </div>
     );
-}
+};

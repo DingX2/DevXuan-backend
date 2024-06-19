@@ -14,15 +14,24 @@
         "type-check:watch": "tsc --noEmit --watch"
     },
     "dependencies": {
+        "@prisma/client": "^5.14.0",
+        "axios": "^1.7.2",
+        "cors": "^2.8.5",
+        "mysql2": "^3.10.0",
+        "next": "14.2.3",
         "react": "^18",
         "react-dom": "^18",
-        "next": "14.2.3"
+        "swagger-cli": "^4.0.4",
+        "swagger-jsdoc": "^6.2.8"
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^19.2.2",
+        "@netlify/plugin-nextjs": "4",
+        "@types/cors": "^2.8.17",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
+        "@types/swagger-jsdoc": "^6.0.4",
         "@typescript-eslint/eslint-plugin": "^7.11.0",
         "@typescript-eslint/parser": "^7.11.0",
         "commitlint": "^19.3.0",
@@ -40,6 +49,7 @@
         "husky": "^9.0.11",
         "lint-staged": "^15.2.5",
         "prettier": "^3.2.5",
+        "prisma": "^5.14.0",
         "typescript": "^5"
     },
     "lint-staged": {
@@ -54,5 +64,6 @@
         "*.{json,md}": [
             "bash -c 'bun prettier'"
         ]
-    }
+    },
+    "type": "module"
 }

@@ -5,3 +5,4 @@ bun.lockb
 .github
 .gitignore
 README.md
+next.config.mjs

@@ -1,0 +1,15 @@
+[build]
+  publish = ".next"
+  command = "bun run build"
+
+[context.production.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NODE_ENV = "production"
+
+[context.deploy-preview]
+  command = "bun run build-preview"
+
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
