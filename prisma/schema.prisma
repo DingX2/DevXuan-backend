@@ -1,6 +1,6 @@
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
@@ -9,10 +9,11 @@ generator client {
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  subtitle  String
-  content   String
-  writeDate DateTime @default(now())
-  image     String?
+  id       Int      @id @default(autoincrement())
+  title    String
+  subtitle String?
+  content  String
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+  image    String?
 }
