@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import axios from 'axios';
 import { type PostModel } from '../types';
 
-export const Home = () => {
+export const Home: FC = () => {
     const [posts, setPosts] = useState<PostModel[]>([]);
     const router = useRouter();
 
@@ -59,3 +59,5 @@ export const Home = () => {
         </div>
     );
 };
+
+export default Home;

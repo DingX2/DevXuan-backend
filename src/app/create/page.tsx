@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { type FC, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
-export const CreatePost = () => {
+export const CreatePost: FC = () => {
     const [title, setTitle] = useState('');
     const [subtitle, setSubtitle] = useState('');
     const [content, setContent] = useState('');
@@ -17,12 +17,12 @@ export const CreatePost = () => {
         setLoading(true);
 
         try {
-            console.log(title, subtitle, content, image);
+            // console.log(title, subtitle, content, image);
             await axios.post('/api/posts', { title, subtitle, content, image });
             router.push('/');
         } catch (error) {
-            console.error('Error creating post:', error);
-            alert('Failed to create post. Please try again.');
+            // console.error('Error creating post:', error);
+            // alert('Failed to create post. Please try again.');
         } finally {
             setLoading(false);
         }
@@ -51,3 +51,5 @@ export const CreatePost = () => {
         </div>
     );
 };
+
+export default CreatePost;
