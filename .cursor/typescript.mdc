@@ -1,0 +1,36 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# TypeScript Rules
+
+## Type Definitions
+- Use explicit type declarations
+- Avoid using 'any' type
+- Use interfaces and types appropriately
+- Utilize generics
+
+## Type Safety
+- Enable strict mode
+- Perform thorough null checks
+- Use type guards
+- Minimize type assertions
+
+## Code Organization
+- Place type definitions in types directory
+- Separate common types into dedicated files
+- Consider type reusability
+- Use modular type structure
+
+## Best Practices
+- Use readonly properties
+- Use union and intersection types appropriately
+- Utilize type inference
+- Fix type errors immediately
+
+## Documentation
+- Comment complex types
+- Document type definitions
+- Document API types
+- Document type changes

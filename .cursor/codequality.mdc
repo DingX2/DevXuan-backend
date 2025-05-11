@@ -1,0 +1,39 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Code Quality Rules
+
+## Code Style
+- Follow ESLint rules
+- Follow Prettier formatting rules
+- Maintain consistent code style
+- Remove unnecessary whitespace and line breaks
+
+## Code Review
+- Code review required before PR
+- Check the following during code review:
+  - Feature requirements met
+  - Test code written
+  - Documentation
+  - Performance considerations
+
+## Documentation
+- API documentation required
+- Comment complex logic
+- Maintain README.md
+- Document changes
+
+## Performance
+- Minimize unnecessary rendering
+- Prevent memory leaks
+- Optimize database queries
+- Implement caching strategy
+
+## Security
+- Validate input values
+- Prevent SQL injection
+- Prevent XSS
+- Prevent CSRF
+- Handle authentication/authorization

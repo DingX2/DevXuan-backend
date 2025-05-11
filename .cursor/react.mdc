@@ -1,0 +1,38 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# React Rules
+
+## Component Structure
+- Use functional components
+- Components should follow Single Responsibility Principle
+- Define prop types
+- Keep component size appropriate
+
+## State Management
+- Use useState for simple state
+- Use useReducer for complex state
+- Use Context API or state management library for global state
+- Prevent unnecessary state updates
+
+## Hooks
+- Use 'use' prefix for custom hooks
+- Follow hook rules:
+  - Only call hooks at the top level
+  - Only call hooks from React functions
+- Specify dependency arrays correctly
+- Prevent unnecessary re-renders
+
+## Performance
+- Use React.memo appropriately
+- Utilize useMemo and useCallback
+- Prevent unnecessary re-renders
+- Implement code splitting
+
+## Props
+- Minimize props drilling
+- Use defaultProps
+- Use prop-types or TypeScript
+- Prevent unnecessary props passing

@@ -1,0 +1,34 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Clean Code Rules
+
+## Naming Conventions
+- Use camelCase for variables
+- Use PascalCase for classes
+- Use UPPER_SNAKE_CASE for constants
+- Function names should start with a verb and use camelCase
+
+## Function Rules
+- Functions should do one thing only
+- Keep functions under 20 lines
+- Limit parameters to 3 or less
+- Function names should clearly describe their purpose
+
+## Code Organization
+- Keep related code together
+- Files should follow Single Responsibility Principle
+- Use proper indentation and spacing
+- Use comments only when necessary
+
+## Error Handling
+- Implement explicit error handling
+- Minimize use of try-catch blocks
+- Error messages should be clear and specific
+
+## Testing
+- Write unit tests
+- Tests should be independent
+- Test names should clearly describe the test case
